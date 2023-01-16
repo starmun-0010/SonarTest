@@ -1,7 +1,15 @@
-public class Test
+using Xunit;
+public class SonarTests
 {
-    public string TestString(string parameter)
+   [Fact]
+    public void TestShouldReturnTheSameStringAsProvided()
     {
-        return parameter;
+        //Arrange
+        var stringer = new Stringer();
+        var param = "yo";
+        //Act
+        var value = stringer.Stringu(param);
+        //Assert
+        Assert.True(param == value);
     }
 }
